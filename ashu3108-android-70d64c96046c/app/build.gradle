@@ -1,0 +1,173 @@
+apply plugin: 'com.android.application'
+
+android {
+
+    Properties properties = new Properties()
+    properties.load(project.rootProject.file('piktale.properties').newDataInputStream())
+
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.piktale"
+        minSdkVersion 16
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+    }
+    signingConfigs {
+        debug {
+            keyAlias "piktale"
+            keyPassword "piktale@123"
+            storePassword "piktale@123"
+            storeFile file("../extras/staging")
+        }
+        staging {
+            keyAlias "piktale"
+            keyPassword "piktale@123"
+            storePassword "piktale@123"
+            storeFile file("../extras/staging")
+        }
+        release {
+            keyAlias "skyapp"
+            keyPassword "skyapp@1two9"
+            storePassword "skyapp@1two3"
+            storeFile file("../extras/skyapp_release")
+        }
+    }
+    buildTypes {
+        staging {
+            minifyEnabled false
+            applicationIdSuffix ".staging"
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+            def domain = properties.getProperty('STAGING_DOMAIN')
+            def path = properties.getProperty('STAGING_PATH')
+            buildConfigField("String", "DOMAIN", "\"" + domain + "\"")
+            buildConfigField("String", "PATH", "\"" + path + "\"")
+            buildConfigField("String", "BASE_URL", "\"" + domain + path + "\"")
+            buildConfigField("boolean", "IS_FABRIC_REQUIRED", "true")
+            debuggable true
+            signingConfig signingConfigs.staging
+            resValue "string", "app_name", "Piktale"
+        }
+        staging_no_fabric {
+            applicationIdSuffix ".staging"
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            def domain = properties.getProperty('STAGING_DOMAIN')
+            def path = properties.getProperty('STAGING_PATH')
+            buildConfigField("String", "DOMAIN", "\"" + domain + "\"")
+            buildConfigField("String", "PATH", "\"" + path + "\"")
+            buildConfigField("String", "BASE_URL", "\"" + domain + path + "\"")
+            buildConfigField("boolean", "IS_FABRIC_REQUIRED", "false")
+            debuggable true
+            signingConfig signingConfigs.staging
+            resValue "string", "app_name", "Piktale"
+        }
+        releasedebug {
+            debuggable true
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            def domain = properties.getProperty('PROD_DOMAIN')
+            def path = properties.getProperty('PROD_PATH')
+            buildConfigField("String", "DOMAIN", "\"" + domain + "\"")
+            buildConfigField("String", "PATH", "\"" + path + "\"")
+            buildConfigField("String", "BASE_URL", "\"" + domain + path + "\"")
+            buildConfigField("boolean", "IS_FABRIC_REQUIRED", "true")
+//            signingConfig signingConfigs.release
+            resValue "string", "app_name", "Piktale"
+        }
+        release {
+            initWith releasedebug
+            debuggable false
+            postprocessing {
+                removeUnusedCode false
+                removeUnusedResources false
+                obfuscate false
+                optimizeCode false
+                proguardFile 'proguard-rules.pro'
+            }
+        }
+    }
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
+    dataBinding{
+        enabled = true
+    }
+}
+
+ext {
+    RETROFIT = '2.4.0'
+    SUPPORT_LIB_VER = '27.1.1'
+    ROOM_AND_LIVE = '1.0.0'
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+    implementation 'com.android.support:design:27.1.1'
+    implementation 'com.android.support:cardview-v7:27.1.1'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    //for network calls
+    implementation "com.squareup.retrofit2:retrofit:$RETROFIT"
+    implementation "com.squareup.retrofit2:converter-gson:$RETROFIT"
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.10.0'
+
+    //Rx adapter for retrofit
+    implementation "com.squareup.retrofit2:adapter-rxjava:$RETROFIT"
+
+    //Rx
+    implementation 'io.reactivex:rxjava:1.3.7'
+    implementation 'io.reactivex:rxandroid:1.2.1'
+
+    // for Android Room Database
+//    implementation "android.arch.persistence.room:runtime:$ROOM_AND_LIVE"
+//    annotationProcessor "android.arch.persistence.room:compiler:$ROOM_AND_LIVE"
+    // for Android Live Data
+//    implementation "android.arch.lifecycle:extensions:$ROOM_AND_LIVE"
+//    annotationProcessor "android.arch.lifecycle:compiler:$ROOM_AND_LIVE"
+
+    //for json parser
+    implementation 'com.google.code.gson:gson:2.8.2'
+
+    //for UI Injection
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+
+    // this lib has min sdk 16
+    implementation 'com.chaos.view:pinview:1.3.0'
+
+    implementation "com.facebook.stetho:stetho:1.5.0"
+
+    //for Android Permissions
+    implementation 'com.karumi:dexter:4.2.0'
+
+    implementation 'com.razorpay:checkout:1.4.7'
+
+    implementation 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1'
+
+    implementation 'com.polyak:icon-switch:1.0.0'
+
+    implementation 'xyz.pinaki.android:camera:2.1.0'
+
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
+
+    implementation 'com.github.zcweng:switch-button:0.0.3@aar'
+
+    implementation 'com.github.angads25:toggle:1.0.0'
+
+    implementation 'com.appolica:flubber:1.0.1'
+
+    implementation 'com.github.zomato:androidphotofilters:1.0.1'
+
+
+}

@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+
+    </data>
+
+    <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!--<android.support.design.widget.TextInputLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--app:hintTextAppearance="@style/MyHintText">-->
+
+        <!--<EditText-->
+        <!--android:id="@+id/name"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:hint="Name"-->
+        <!--android:imeOptions="actionNext"-->
+        <!--android:inputType="textPersonName"-->
+        <!--android:textColor="@color/text"-->
+        <!--android:textSize="16sp" />-->
+
+        <!--</android.support.design.widget.TextInputLayout>-->
+
+        <!--<android.support.design.widget.TextInputLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--app:hintTextAppearance="@style/MyHintText">-->
+
+        <!--<EditText-->
+        <!--android:id="@+id/username"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:hint="User Name"-->
+        <!--android:imeOptions="actionNext"-->
+        <!--android:inputType="textPersonName"-->
+        <!--android:textColor="@color/text"-->
+        <!--android:textSize="16sp" />-->
+
+        <!--</android.support.design.widget.TextInputLayout>-->
+
+        <!--<android.support.design.widget.TextInputLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--app:hintTextAppearance="@style/MyHintText">-->
+
+        <!--<EditText-->
+        <!--android:id="@+id/dob"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:drawableRight="@drawable/ic_calendar"-->
+        <!--android:focusable="false"-->
+        <!--android:focusableInTouchMode="false"-->
+        <!--android:hint="Date of Birth"-->
+        <!--android:imeOptions="actionNext"-->
+        <!--android:inputType="textPersonName"-->
+        <!--android:textColor="@color/text"-->
+        <!--android:textSize="16sp" />-->
+
+        <!--</android.support.design.widget.TextInputLayout>-->
+
+        <!--<android.support.design.widget.TextInputLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--app:hintTextAppearance="@style/MyHintText">-->
+
+        <!--<EditText-->
+        <!--android:id="@+id/status"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:hint="Status"-->
+        <!--android:inputType="textPostalAddress"-->
+        <!--android:maxLines="3"-->
+        <!--android:textColor="@color/text"-->
+        <!--android:textSize="16sp" />-->
+
+        <!--</android.support.design.widget.TextInputLayout>-->
+
+        <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--android:text="Account Info"-->
+        <!--android:textColor="@color/colorPrimaryDark"-->
+        <!--android:textSize="16sp" />-->
+
+        <!--<android.support.design.widget.TextInputLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--app:hintTextAppearance="@style/MyHintText">-->
+
+        <!--<EditText-->
+        <!--android:id="@+id/mobile"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:hint="Mobile"-->
+        <!--android:imeOptions="actionNext"-->
+        <!--android:inputType="textPersonName"-->
+        <!--android:maxLines="3"-->
+        <!--android:textColor="@color/text"-->
+        <!--android:textSize="16sp" />-->
+
+        <!--</android.support.design.widget.TextInputLayout>-->
+
+        <!--<android.support.design.widget.TextInputLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--app:hintTextAppearance="@style/MyHintText">-->
+
+        <!--<EditText-->
+        <!--android:id="@+id/email"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:hint="Email"-->
+        <!--android:imeOptions="actionNext"-->
+        <!--android:inputType="textPersonName"-->
+        <!--android:maxLines="3"-->
+        <!--android:textColor="@color/text"-->
+        <!--android:textSize="16sp" />-->
+
+        <!--</android.support.design.widget.TextInputLayout>-->
+
+        <!--<FrameLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
+
+        <!--<android.support.design.widget.TextInputLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--app:hintTextAppearance="@style/MyHintText">-->
+
+        <!--<EditText-->
+        <!--android:id="@+id/living"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:hint="Living"-->
+        <!--android:imeOptions="actionNext"-->
+        <!--android:inputType="textPersonName"-->
+        <!--android:maxLines="3"-->
+        <!--android:textColor="@color/text"-->
+        <!--android:textSize="16sp" />-->
+
+        <!--</android.support.design.widget.TextInputLayout>-->
+
+
+        <!--<LinearLayout-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="right|center_vertical"-->
+        <!--android:background="@drawable/grey_stroke_rounded"-->
+        <!--android:gravity="center_vertical"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:paddingLeft="12dp"-->
+        <!--android:paddingTop="8dp"-->
+        <!--android:paddingRight="12dp"-->
+        <!--android:paddingBottom="8dp">-->
+
+        <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:includeFontPadding="false"-->
+        <!--android:text="Public"-->
+        <!--android:textSize="10sp" />-->
+
+        <!--<ImageView-->
+        <!--android:layout_width="10dp"-->
+        <!--android:layout_height="10dp"-->
+        <!--android:src="@drawable/ic_drop_down"-->
+        <!--android:tint="@color/hint" />-->
+
+        <!--</LinearLayout>-->
+
+        <!--</FrameLayout>-->
+
+        <!--<FrameLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="8dp">-->
+
+        <!--<android.support.design.widget.TextInputLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--app:hintTextAppearance="@style/MyHintText">-->
+
+        <!--<EditText-->
+        <!--android:id="@+id/gender"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:hint="Gender"-->
+        <!--android:imeOptions="actionNext"-->
+        <!--android:inputType="textPersonName"-->
+        <!--android:maxLines="3"-->
+        <!--android:text="Female"-->
+        <!--android:textColor="@color/text"-->
+        <!--android:textSize="16sp" />-->
+
+        <!--</android.support.design.widget.TextInputLayout>-->
+
+
+        <!--<LinearLayout-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="right|center_vertical"-->
+        <!--android:background="@drawable/grey_stroke_rounded"-->
+        <!--android:gravity="center_vertical"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:paddingLeft="12dp"-->
+        <!--android:paddingTop="8dp"-->
+        <!--android:paddingRight="12dp"-->
+        <!--android:paddingBottom="8dp">-->
+
+        <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:includeFontPadding="false"-->
+        <!--android:text="Public"-->
+        <!--android:textSize="10sp" />-->
+
+        <!--<ImageView-->
+        <!--android:layout_width="10dp"-->
+        <!--android:layout_height="10dp"-->
+        <!--android:src="@drawable/ic_drop_down"-->
+        <!--android:tint="@color/hint" />-->
+
+        <!--</LinearLayout>-->
+
+        <!--</FrameLayout>-->
+
+        <!--<FrameLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="8dp">-->
+
+        <!--<android.support.design.widget.TextInputLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--app:hintTextAppearance="@style/MyHintText">-->
+
+        <!--<EditText-->
+        <!--android:id="@+id/language"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:hint="Language"-->
+        <!--android:imeOptions="actionNext"-->
+        <!--android:inputType="textPersonName"-->
+        <!--android:maxLines="3"-->
+        <!--android:text="English"-->
+        <!--android:textColor="@color/text"-->
+        <!--android:textSize="16sp" />-->
+
+        <!--</android.support.design.widget.TextInputLayout>-->
+
+
+        <!--<LinearLayout-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="right|center_vertical"-->
+        <!--android:background="@drawable/grey_stroke_rounded"-->
+        <!--android:gravity="center_vertical"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:paddingLeft="12dp"-->
+        <!--android:paddingTop="8dp"-->
+        <!--android:paddingRight="12dp"-->
+        <!--android:paddingBottom="8dp">-->
+
+        <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:includeFontPadding="false"-->
+        <!--android:text="Public"-->
+        <!--android:textSize="10sp" />-->
+
+        <!--<ImageView-->
+        <!--android:layout_width="10dp"-->
+        <!--android:layout_height="10dp"-->
+        <!--android:src="@drawable/ic_drop_down"-->
+        <!--android:tint="@color/hint" />-->
+
+        <!--</LinearLayout>-->
+
+        <!--</FrameLayout>-->
+
+        <com.piktale.views.widget.SubmitButton
+            android:id="@+id/submit_button"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            app:label="Save" />
+
+
+    </LinearLayout>
+
+</layout>
+

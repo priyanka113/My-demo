@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/field_background"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="+91"
+            android:id="@+id/isd_code"
+            android:visibility="gone"
+            android:layout_marginLeft="8dp"
+            android:textColor="@color/textColorPrimary"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/identity"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:textColor="@color/textColor1"
+            android:background="@android:color/transparent"
+            android:hint="Email or Mobile"
+            android:imeOptions="actionDone"
+            android:padding="16dp"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Business Profile"
+                android:textColor="@color/textColor1" />
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp" />
+
+        </LinearLayout>
+
+
+        <com.joanzapata.iconify.widget.IconTextView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:text="{md-info-outline}"
+            android:textColor="#8e8e8e"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

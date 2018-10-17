@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_public"
+        android:orderInCategory="100"
+        android:title="Public"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_all"
+        android:orderInCategory="100"
+        android:title="All Connects"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_custom"
+        android:orderInCategory="100"
+        android:title="Custom Connects"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_me"
+        android:orderInCategory="100"
+        android:title="Only Me"
+        app:showAsAction="always" />
+</menu>
